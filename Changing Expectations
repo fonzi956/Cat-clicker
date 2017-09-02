@@ -1,0 +1,16 @@
+Resources
+
+In case you need a refresher on events and event listeners, here are some links.
+
+If you're writing Cat Clicker with vanilla JS (no jQuery), you'll be adding the "click" event with elem.addEventListener().
+
+var elem = document.getElementById('my-elem');
+elem.addEventListener('click', function(){
+  //the element has been clicked... do stuff here
+}, false);
+
+If you're using jQuery, you'll be adding the "click" event listener with jQuery.click().
+
+$('#my-elem').click(function(e) {
+  //the element has been clicked... do stuff here
+});
