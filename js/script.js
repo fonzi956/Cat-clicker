@@ -24,7 +24,6 @@ https://stackoverflow.com/questions/19222395/how-to-add-an-image-inside-a-dynami
 */
 
 // clear the screen for testing
-document.body.innerHTML = '';
 
 var total = 0;
 
@@ -58,27 +57,31 @@ for (var i = 0; i < nums.length; i++) {
 
 
 
-    var img = document.createElement("img");
-      img.setAttribute("src", nameimg);
-      img.setAttribute("height", "100");
-      img.setAttribute("width", "100");
+
       //img.getElementById(num).appendChild(img);
 
     // ... and when we click, alert the value of `num`
-    img.addEventListener('click', (function(numCopy) {
+
+    var bic = document.getElementById("BigCat")
+
+    elem.addEventListener('click', (function(numCopy) {
         return function() {
+          var bigimg = numCopy + ".jpg"
+          bic.setAttribute("src", bigimg)
+
           var a = nums.indexOf(numCopy);
           var b = trac[a];
 
           ++b;
           trac[a]=b;
 
-          document.getElementById(numCopy).textContent = 'You click me ' + b + ' times in '+numCopy+'!';
+          
+          document.getElementById("numTim").textContent = b;
           //alert('You click me ' + total + ' in '+numCopy+'!');
         };
     })(num));
 
     //document.body.appendChild(elem);
 
-    document.getElementById(num + i).appendChild(img);
+
 };
